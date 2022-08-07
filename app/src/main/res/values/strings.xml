@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">bài 8🤣👌</string>
+    <string name="manager_student">Student Manager</string>
+    <string name="add">Add</string>
+    <string name="cancel">Hủy</string>
+    <string name="save">Lưu</string>
+    <string name="Name">Name: </string>
+    <string name="Address">Address: </string>
+    <string name="phone">Phone:  </string>
+    <string name="add_student">Student Registration</string>
+    <string name="add_student_new">Add new students</string>
+    <string name="edit_student">Edit info</string>
+    <string name="back">ở đây chúng tôi không cho phép điều này</string>
+    <string name="enter_sv_name">Enter student name</string>
+    <string name="enter_sv_address">Enter student address</string>
+    <string name="enter_sv_phone">Enter student phone</string>
+    <string name="avt">avt</string>
+    <string name="digits_name">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="digits_phone">0123456789</string>
+</resources>
