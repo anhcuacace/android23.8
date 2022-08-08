@@ -1,5 +1,6 @@
 package com.dungnd.mvvm.ui.manager
 
+import android.annotation.SuppressLint
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.dungnd.mvvm.R
@@ -16,6 +17,7 @@ class StudentManagerFragment : BaseFragment<FragmentStudentManagerBinding,Studen
 
     override fun viewModelClass(): Class<StudentManagerViewModel> = StudentManagerViewModel::class.java
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun initView() {
         adapter.onStudentClick = { student ->
             findNavController().navigate(
