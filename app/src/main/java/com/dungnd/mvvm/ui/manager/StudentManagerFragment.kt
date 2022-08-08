@@ -17,7 +17,7 @@ class StudentManagerFragment : BaseFragment<FragmentStudentManagerBinding,Studen
     override fun viewModelClass(): Class<StudentManagerViewModel> = StudentManagerViewModel::class.java
 
     override fun initView() {
-        adapter.onStudentClick = { student, _ ->
+        adapter.onStudentClick = { student ->
             findNavController().navigate(
                 R.id.action_studentManagerFragment_to_infoFragment,
                 bundleOf(
@@ -26,6 +26,11 @@ class StudentManagerFragment : BaseFragment<FragmentStudentManagerBinding,Studen
                     Pair("student",student)
                 )
             )
+        }
+        adapter.onIcontClick={
+            viewModel.deletewithid(it.id)
+            viewModel.getAllStudent()
+            adapter.notifyDataSetChanged()
         }
         viewModel.studentList.observe(this){
             adapter.studentList=it

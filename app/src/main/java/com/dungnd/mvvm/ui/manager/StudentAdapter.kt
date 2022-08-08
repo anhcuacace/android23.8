@@ -10,16 +10,19 @@ import com.dungnd.mvvm.util.setOnSingClickListener
 class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
     inner class StudentViewHolder constructor(private val binding: ItemStudentBinding)
         :RecyclerView.ViewHolder(binding.root){
+        val remove=binding.iconRemove
             fun bind(student: Student){
                 binding.nameItem.text=student.name
                 binding.addressItem.text=student.address
                 binding.phoneItem.text=student.phone
+
             }
 
     }
 
     var studentList:List<Student>?=null
-    var onStudentClick:((Student,Int)->Unit)?=null
+    var onStudentClick:((Student)->Unit)?=null
+    var onIcontClick:((Student)->Unit)?=null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
         val binding=ItemStudentBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return StudentViewHolder(binding)
@@ -28,7 +31,10 @@ class StudentAdapter: RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         studentList?.get(position)?.let { holder.bind(it) }
         holder.itemView.setOnSingClickListener {
-            studentList?.let { it1 -> onStudentClick?.invoke(it1[position], position) }
+            studentList?.let { it1 -> onStudentClick?.invoke(it1[position]) }
+        }
+        holder.remove.setOnSingClickListener {
+            studentList?.let { it1 -> onIcontClick?.invoke(it1[position]) }
         }
         }
 

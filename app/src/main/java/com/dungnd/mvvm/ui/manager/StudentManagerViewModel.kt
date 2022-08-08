@@ -22,4 +22,10 @@ class StudentManagerViewModel @Inject constructor(
             studentList.value= localDatabase.studentDao().getAllFolder()
         }
     }
+    fun deletewithid(id:Int){
+        viewModelScope.launch {
+            localDatabase.studentDao().deleteById(id)
+        }
+    }
+
 }

@@ -40,8 +40,7 @@ class LocalRepository @Inject constructor(
 
     suspend fun getAllStudent()=studentDao.getAllFolder()
 
-
-
+    suspend fun deleteWithid(id: Int)=studentDao.deleteById(id)
 
     suspend fun getFinishedItemCountByType(type: String) =
         itemDao.getFinishedItemCountByType(type)
