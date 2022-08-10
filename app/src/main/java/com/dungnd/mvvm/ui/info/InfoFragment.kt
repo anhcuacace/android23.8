@@ -68,17 +68,16 @@ class InfoFragment : BaseFragment<FragmentInforBinding,InfoViewModel>() {
         binding.edtFolderName.setText(student.name)
         binding.edtSvAddress.setText(student.address)
         binding.edtSvPhone.setText(student.phone)
-//        binding.edtSvPhone.addTextChangedListener {
-//            val phone=binding.edtSvPhone.text.toString().trim()
-//            binding.edtSvPhone.setText(phone)
-//            if (Patterns.PHONE.matcher(phone).matches()){
-//                binding.edtSvPhone.error = "sdt hợp lý"
-//                binding.btnSave.isEnabled=true
-//            }else{
-//                binding.edtSvPhone.error = "sdt méo hợp lý"
-//                binding.btnSave.isEnabled=false
-//            }
-//        }
+        binding.edtSvPhone.addTextChangedListener {
+            val phone=binding.edtSvPhone.text.toString().trim()
+            if (Patterns.PHONE.matcher(phone).matches()){
+                binding.edtSvPhone.error = "sdt hợp lý"
+                binding.btnSave.isEnabled=true
+            }else{
+                binding.edtSvPhone.error = "sdt méo hợp lý"
+                binding.btnSave.isEnabled=false
+            }
+        }
         binding.btnSave.setOnSingClickListener {
             val name = binding.edtFolderName.text.toString()
             val address = binding.edtSvAddress.text.toString()

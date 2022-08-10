@@ -18,6 +18,11 @@
         <action
             android:id="@+id/action_splashFragment_to_studentManagerFragment"
             app:destination="@id/studentManagerFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_productsFragment"
+            app:destination="@id/productsFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -51,4 +56,16 @@
             android:id="@+id/action_infoFragment_to_studentManagerFragment"
             app:destination="@id/studentManagerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.dungnd.mvvm.ui.bai11.product.ProductsFragment"
+        android:label="ProductsFragment" >
+        <action
+            android:id="@+id/action_productsFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.dungnd.mvvm.ui.bai11.productdetail.ProductDetailFragment"
+        android:label="ProductDetailFragment" />
 </navigation>

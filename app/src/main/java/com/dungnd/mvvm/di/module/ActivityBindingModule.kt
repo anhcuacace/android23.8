@@ -1,5 +1,7 @@
 package com.dungnd.mvvm.di.module
 
+import com.dungnd.mvvm.ui.bai11.product.ProductsFragment
+import com.dungnd.mvvm.ui.bai11.productdetail.ProductDetailFragment
 import com.dungnd.mvvm.ui.detail.DetailFragment
 import com.dungnd.mvvm.ui.home.HomeFragment
 import com.dungnd.mvvm.ui.main.MainActivity
@@ -29,4 +31,10 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector
     abstract fun bindStudentManagerFragment(): StudentManagerFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindProductsFragment(): ProductsFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindProductDetailFragment(): ProductDetailFragment
 }

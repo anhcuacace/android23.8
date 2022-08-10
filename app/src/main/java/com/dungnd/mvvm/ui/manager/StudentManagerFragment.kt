@@ -23,7 +23,6 @@ class StudentManagerFragment : BaseFragment<FragmentStudentManagerBinding,Studen
             findNavController().navigate(
                 R.id.action_studentManagerFragment_to_infoFragment,
                 bundleOf(
-
                     Pair("type", true),
                     Pair("student",student)
                 )
